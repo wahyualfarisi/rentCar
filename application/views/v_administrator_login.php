@@ -28,12 +28,12 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="<?= base_url('admin/Dashboard') ?> " method="post">
+      <form action="<?= base_url('LoginAdmin/actionLogin') ?> " method="post">
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" name="email" placeholder="Email">
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
         <div class="form-group has-feedback">
           <select class="form-control" name="akses">

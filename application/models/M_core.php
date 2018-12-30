@@ -8,4 +8,13 @@ class M_core extends CI_Model{
     return $this->db->get($table);
   }
 
+  function selectWhere($table, $where)
+  {
+    $this->db->select('*');
+    $this->db->from($table);
+    $this->db->where($where);
+
+    return $this->db->get();
+  }
+
 }
