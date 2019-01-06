@@ -21,22 +21,30 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <img src="<?= base_url('assets/users/img/madera1.png') ?>" alt="">
   </div>
   <!-- /.login-logo -->
-  <div class="card">
+  <div class="card" id="box-form">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="<?= base_url('LoginAdmin/actionLogin') ?> " method="post">
+      <form id="login_form" method="post">
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" name="email" placeholder="Email">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email">
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" name="password" placeholder="Password">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
+
+        <div class="checkbox icheck">
+          <label>
+            <input type="checkbox" id="showPassword"> Tampilkan password
+          </label>
+        </div>
+
+
         <div class="form-group has-feedback">
-          <select class="form-control" name="akses">
+          <select class="form-control" name="akses" id="akses">
               <option value=""> -- Pilih akses --- </option>
               <option value="1">Administrator</option>
               <option value="2">Operational</option>
@@ -45,7 +53,7 @@
         </div>
         <div class="row">
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            <input type="button" id="login" class="btn btn-primary btn-block btn-flat" value="Sign in" >
           </div>
           <!-- /.col -->
         </div>
@@ -57,18 +65,61 @@
 <!-- /.login-box -->
 <!-- jQuery -->
 <script src="<?= base_url().'assets/admin/plugins/jquery/jquery.min.js' ?> "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url().'assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js' ?> "></script>
 <!-- iCheck -->
 <script src="<?= base_url().'assets/admin/plugins/iCheck/icheck.min.js' ?> "></script>
 <script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass   : 'iradio_square-blue',
-      increaseArea : '20%' // optional
+  $(document).ready(function() {
+
+
+    $('#showPassword').on('click', function() {
+      if($(this).is(':checked') )
+      {
+        $('#password').attr('type', 'text');
+      }else {
+        $('#password').attr('type', 'password');
+      }
+    });
+
+    $('#login').click(function(){
+
+      var email    = $('#email').val();
+      var password = $('#password').val();
+      var akses    = $('#akses').val();
+
+      if($.trim(email).length > 0 && $.trim(password).length > 0 && $.trim(akses) !== '' ){
+
+        $.ajax({
+          url: "<?= base_url('LoginAdmin/actionLogin') ?>",
+          method: "POST",
+          data: {email: email, password: password, akses: akses},
+          cache: false,
+          beforeSend: function(){
+            $('#login').val('loading ...');
+          },
+          success: function(data){
+            if(data){
+              window.location = "<?= base_url('admin/Dashboard')  ?> ";
+            }else{
+              var options = {
+                distance: '40',
+                direction: 'left',
+                times: 3
+              }
+              $('#box-form').effect("shake", options, 800);
+              $('#login').val("login");
+            }
+          }
+        });
+
+      }else{
+        return false;
+      }
+
     })
-  })
+  });
 </script>
 </body>
 </html>

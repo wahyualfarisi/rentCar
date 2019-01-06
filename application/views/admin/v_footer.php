@@ -25,5 +25,9 @@
 <script src="<?= base_url().'assets/admin/plugins/chart.js/Chart.min.js' ?> "></script>
 <script src="<?= base_url().'assets/admin/dist/js/demo.js' ?> "></script>
 <script src="<?= base_url().'assets/admin/dist/js/pages/dashboard3.js' ?> "></script>
+<script src="<?= base_url().'assets/admin/plugins/datatables/jquery.dataTables.min.js'  ?> "></script>
+<script src="<?= base_url().'assets/admin/plugins/datatables/dataTables.bootstrap4.min.js' ?> "></script>
+<!-- SlimScroll -->
+<script src="<?= base_url().'assets/admin/plugins/slimScroll/jquery.slimscroll.min.js' ?> "></script>
 </body>
 </html>

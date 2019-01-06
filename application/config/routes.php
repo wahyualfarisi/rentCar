@@ -51,5 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Home';
 $route['admin'] = 'LoginAdmin';
+$route['kendaraan-data'] = 'admin/Kendaraan';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

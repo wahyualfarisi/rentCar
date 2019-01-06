@@ -3,6 +3,42 @@
     "use strict";
 
     jQuery(document).ready(function ($) {
+
+
+        $('#kategori_sewa').change(function(){
+            var id = $(this).val();
+
+            $.ajax({
+              url:  document.URL+"/Home/lokasi",
+              method: "POST",
+              data: {id: id},
+              async: false,
+              dataType: "json",
+              success: function(data){
+                console.log(data);
+                var html = '';
+                var i;
+                for(i=0; i<data.length; i++){
+                  html += '<option>'+data[i].nama_wilayah+'</option>';
+                }
+                $('.lokasiShow').html(html);
+              }
+            })
+        });
+
+        $('#cari').click(function() {
+            // $('#slideslow-bg').hide();
+            var lokasi = $('.lokasiShow').val();
+            if(lokasi === 'Jakarta Pusat'){
+              alert('this is');
+            }else {
+              return false;
+            }
+        })
+
+
+
+
         /*---------------------------------
          All Window Scroll Function Start
         --------------------------------- */
@@ -25,25 +61,15 @@
          All Window Scroll Function End
         --------------------------------- */
 
+        //scroll list rental
+
+
+
+        //end list rental
+
         // Home Page 0ne Date Picker JS
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-        $('#startDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: today,
-            maxDate: function () {
-                return $('#endDate').val();
-                // console.log($('#endDate').val());
-            }
-        });
 
-        $('#endDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: function () {
-                return $('#startDate').val();
-            }
-        });
 
         // Partner Carousel
         $(".partner-content-wrap").owlCarousel({
@@ -176,7 +202,10 @@
         $('#startDate2').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
+            format: 'yyyy-mm-dd',
+            maxDate: "+1M +5D",
             minDate: today,
+            toggleActive : true,
             maxDate: function () {
                 return $('#endDate2').val();
             }
@@ -185,9 +214,11 @@
         $('#endDate2').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
+            format: 'yyyy-mm-dd',
             minDate: function () {
                 return $('#startDate2').val();
-            }
+            },
+            daysOfWeekDisabled: [0, 6]
         });
 
         // Home Page 3 Slider Start

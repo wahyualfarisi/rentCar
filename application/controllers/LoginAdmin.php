@@ -8,8 +8,9 @@ class LoginAdmin extends CI_Controller{
     parent::__construct();
     $this->load->model('m_core');
     if($this->session->userdata('login') === 1){
-      redirect(base_url('admin/Dashboard') );
+     redirect(base_url('admin/Dashboard') );
     }
+
   }
 
   function index()
@@ -36,15 +37,18 @@ class LoginAdmin extends CI_Controller{
         'login' => 1
       );
       $this->session->set_userdata($createSession);
-
       redirect(base_url('admin/Dashboard') );
     }
-    redirect(base_url('admin'));
 
 
 
+  }
 
-
+  function logout()
+  {
+    $this->session->sess_destroy('login');
+    redirect(base_url('admin') );
+    // echo "hello";
   }
 
 }

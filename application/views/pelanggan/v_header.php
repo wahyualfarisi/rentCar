@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -58,8 +58,8 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index2.html" class="logo">
-                            <img src="<?= base_url().'assets/users/img/logo.png' ?> " alt="JSOFT">
+                        <a href="<?= base_url() ?> " class="logo">
+                            <img src="<?= base_url().'assets/users/img/madera1.png' ?> " style="width: 200px;" alt="JSOFT">
                         </a>
                     </div>
                     <!--== Logo End ==-->

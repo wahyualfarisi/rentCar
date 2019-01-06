@@ -1,130 +1,83 @@
     <!--== SlideshowBg Area Start ==-->
+    <section id="show_pencarian">
+
+    </section>
+
     <section id="slideslow-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="slideshowcontent">
-                        <div class="display-table">
-                            <div class="display-table-cell">
-                                <h1>Booking sekarang juga!</h1>
-                                <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+      <div class="container">
+              <div class="row">
+                  <div class="col-lg-5">
+                      <div class="book-a-car">
+                          <form id="cari-mobil" method="post">
+                              <!--== Pick Up Location ==-->
+                              <div class="pickup-location book-item">
+                                  <h4>LAYANAN SEWA:</h4>
+                                  <select class="custom-select" id="kategori_sewa" name="kategori_sewa">
+                                    <option value="0"> select </option>
+                                    <?php foreach ($kategorySewa as $key): ?>
+                                        <option value="<?= $key->kategori_sewa ?> "><?= $key->jenis_sewa ?></option>
 
-                                <div class="book-ur-car">
-                                    <form action="index2.html">
-                                        <div class="pick-location bookinput-item">
-                                            <select class="custom-select">
-                                              <option selected>Pick Location</option>
-                                              <option value="1">Dhaka</option>
-                                              <option value="2">Comilla</option>
-                                              <option value="3">Barishal</option>
-                                              <option value="3">Rangpur</option>
-                                            </select>
-                                        </div>
+                                    <?php endforeach; ?>
+                                  </select>
+                              </div>
+                              <!--== Pick Up Location ==-->
 
-                                        <div class="pick-date bookinput-item">
-                                            <input id="startDate2" placeholder="Pick Date" />
-                                        </div>
+                              <div class="pickup-location book-item">
+                                   <h4>LOKASI</h4>
+                                   <select class="custom-select lokasiShow" name="lokasi_sewa" id="lokasi_sewa" >
+                                     <option value="0"> select </option>
 
-                                        <div class="retern-date bookinput-item">
-                                            <input id="endDate2" placeholder="Return Date" />
-                                        </div>
+                                   </select>
+                              </div>
 
-                                        <div class="car-choose bookinput-item">
-                                            <select class="custom-select">
-                                              <option selected>Choose Car</option>
-                                              <option value="1">BMW</option>
-                                              <option value="2">Audi</option>
-                                              <option value="3">Lexus</option>
-                                            </select>
-                                        </div>
+                              <!--== Pick Up Date ==-->
+                              <div class="pick-up-date book-item">
+                                  <h4>TANGGAL AMBIL:</h4>
+                                  <input id="startDate2" placeholder="Pick Up Date" name="tgl_ambil"  />
 
-                                        <div class="bookcar-btn bookinput-item">
-                                            <button type="submit">Book Car</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                                  <div class="return-car">
+                                      <h4>TANGGAL KEMBALI</h4>
+                                      <input id="endDate2" placeholder="Return Date" name="tgl_kembali" disabled >
+                                  </div>
+
+                                  <div class="margin-top: 50px">
+                                      <div id="bedahari"></div>
+                                  </div>
+
+                              </div>
+
+
+                              <!--== Pick Up Location ==-->
+
+
+                              <div class="book-button text-center">
+                                  <input type="button" id="cari" class="book-now-btn" value="Cari mobil" >
+                              </div>
+
+                          </form>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-7 text-right" style="margin-top: 150px;">
+                      <div class="display-table">
+                          <div class="display-table-cell">
+                              <div class="slider-right-text">
+                                  <h1>Madera Transport</h1>
+                                  <h1>Booking sekarang juga!</h1>
+                                  <p>Pemberlakuan ganjil - genap untuk layanan sewa dalam kota </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
     </section>
     <!--== SlideshowBg Area End ==-->
 
     <!--== About Us Area Start ==-->
     <section id="about-area" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-center">
-                        <h2>Tentang kami</h2>
-                        <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <!-- Section Title End -->
-            </div>
-
-            <div class="row">
-                <!-- About Content Start -->
-                <div class="col-lg-6">
-                    <div class="display-table">
-                        <div class="display-table-cell">
-                            <div class="about-content">
-                                <p>Lorem simply dummy is a texted of the printing costed and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- About Content End -->
-
-                <!-- About Video Start -->
-                <div class="col-lg-6">
-                    <div class="about-image">
-                        <img src="assets/img/home-2-about.png" alt="JSOFT">
-                    </div>
-                </div>
-                <!-- About Video End -->
-            </div>
-
-            <!-- About Fretutes Start -->
-            <div class="about-feature-area">
-                <div class="row">
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item active">
-                            <i class="fa fa-car"></i>
-                            <h3>ALL BRANDS</h3>
-                            <p>Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit. Nesciunted all of.</p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item">
-                            <i class="fa fa-car"></i>
-                            <h3>ALL BRANDS</h3>
-                            <p>Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit. Nesciunted all of.</p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-
-                    <!-- Single Fretutes Start -->
-                    <div class="col-lg-4">
-                        <div class="about-feature-item">
-                            <i class="fa fa-car"></i>
-                            <h3>ALL BRANDS</h3>
-                            <p>Loremed ipsumed is a compnayes odsoyel dolor sit amet, consectetur adipisicing elit. Nesciunted all of.</p>
-                        </div>
-                    </div>
-                    <!-- Single Fretutes End -->
-                </div>
-            </div>
-            <!-- About Fretutes End -->
-        </div>
+        <?php $this->load->view('pelanggan/v_tentang_kami') ?>
     </section>
     <!--== About Us Area End ==-->
 
@@ -138,7 +91,7 @@
                     <div class="section-title  text-center">
                         <h2>Pilih kendaran mu !</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>Pemberlakuan ganjil - genap untuk layanan sewa dalam kota .</p>
                     </div>
                 </div>
                 <!-- Section Title End -->
@@ -180,7 +133,8 @@
                                             <div class="p-car-content">
                                                 <h3>
                                                     <a href="#"><?= $key->type ?> </a>
-                                                    <span class="price"><i class="fa fa-tag"></i><?= number_format($key->biaya)?> </span>
+                                                    <span class="price"><i class="fa fa-tag"></i><?= number_format($key->biaya_luar_kota)?> </span>
+                                                    
                                                 </h3>
 
                                                 <h5></h5>
@@ -192,11 +146,6 @@
                                     </div>
                                     <!-- Single Popular Car End -->
                                     <?php endforeach; ?>
-
-
-
-
-
 
                                 </div>
                                 <!-- Choose Cars Content-wrap -->
@@ -235,145 +184,95 @@
 
     <!--== Articles Area Start ==-->
     <section id="tips-article-area" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Section Title Start -->
-                <div class="col-lg-12">
-                    <div class="section-title  text-center">
-                        <h2>Tips and articles</h2>
-                        <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <!-- Section Title End -->
-            </div>
-
-            <!-- Articles Content Wrap Start -->
-            <div class="row">
-                <!-- Single Articles Start -->
-                <div class="col-lg-12">
-                    <article class="single-article">
-                        <div class="row">
-                            <!-- Articles Thumbnail Start -->
-                            <div class="col-lg-5">
-                                <div class="article-thumb">
-                                    <img src="<?= base_url().'assets/users/img/article/arti-thumb-1.jpg'  ?>  " alt="JSOFT">
-                                </div>
-                            </div>
-                            <!-- Articles Thumbnail End -->
-
-                            <!-- Articles Content Start -->
-                            <div class="col-lg-7">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <div class="article-body">
-                                            <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                            <div class="article-meta">
-                                                <a href="#" class="author">By :: <span>Admin</span></a>
-                                                <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                            </div>
-
-                                            <div class="article-date">25 <span class="month">jan</span></div>
-
-                                            <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-
-                                            <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Articles Content End -->
-                        </div>
-                    </article>
-                </div>
-                <!-- Single Articles End -->
-
-                <!-- Single Articles Start -->
-                <div class="col-lg-12">
-                    <article class="single-article middle">
-                        <div class="row">
-
-                            <!-- Articles Thumbnail Start -->
-                            <div class="col-lg-5 d-xl-none">
-                                <div class="article-thumb">
-                                    <img src="<?= base_url().'assets/users/img/article/arti-thumb-2.jpg'  ?> " alt="JSOFT">
-                                </div>
-                            </div>
-                            <!-- Articles Thumbnail End -->
-
-                            <!-- Articles Content Start -->
-                            <div class="col-lg-7">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <div class="article-body">
-                                            <h3><a href="article-details.html">fringilla oremedad ipsum dolor sit</a></h3>
-                                            <div class="article-meta">
-                                                <a href="#" class="author">By :: <span>Admin</span></a>
-                                                <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                            </div>
-
-                                            <div class="article-date">14<span class="month">feb</span></div>
-
-                                            <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-
-                                            <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Articles Content End -->
-
-                            <!-- Articles Thumbnail Start -->
-                            <div class="col-lg-5 d-none d-xl-block">
-                                <div class="article-thumb">
-                                    <img src="<?= base_url().'assets/users/img/article/arti-thumb-2.jpg'  ?> " alt="JSOFT">
-                                </div>
-                            </div>
-                            <!-- Articles Thumbnail End -->
-                        </div>
-                    </article>
-                </div>
-                <!-- Single Articles End -->
-
-                <!-- Single Articles Start -->
-                <div class="col-lg-12">
-                    <article class="single-article">
-                        <div class="row">
-                            <!-- Articles Thumbnail Start -->
-                            <div class="col-lg-5">
-                                <div class="article-thumb">
-                                    <img src="<?= base_url().'assets/users/img/article/arti-thumb-3.jpg'  ?> " alt="JSOFT">
-                                </div>
-                            </div>
-                            <!-- Articles Thumbnail End -->
-
-                            <!-- Articles Content Start -->
-                            <div class="col-lg-7">
-                                <div class="display-table">
-                                    <div class="display-table-cell">
-                                        <div class="article-body">
-                                            <h3><a href="article-details.html">Tempored incididunt ut labore</a></h3>
-                                            <div class="article-meta">
-                                                <a href="#" class="author">By :: <span>Admin</span></a>
-                                                <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                            </div>
-
-                                            <div class="article-date">17 <span class="month">feb</span></div>
-
-                                            <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-
-                                            <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Articles Content End -->
-                        </div>
-                    </article>
-                </div>
-                <!-- Single Articles End -->
-            </div>
-            <!-- Articles Content Wrap End -->
-        </div>
+      <?php $this->load->view('pelanggan/v_tips') ?>
     </section>
     <!--== Articles Area End ==-->
+    <script src="<?= base_url().'assets/users/js/jquery-3.2.1.min.js' ?> "></script>
+    <script type="text/javascript">
+
+
+      $(document).ready(function() {
+
+        // $('#startDate2').change(function() {
+        //   $('#endDate2').val('2019-01-06');
+        //   $('#endDate2').attr('disable');
+        // })
+
+
+        $('#kategori_sewa').change(function() {
+            $('#lokasi_sewa').prop("disabled", false);
+        })
+
+        $('#lokasi_sewa').change(function() {
+          $('#startDate2').prop("disabled", false);
+        })
+
+        $('#startDate2').change(function(){
+          $('#endDate2').prop("disabled", false);
+        })
+
+        $('#endDate2').change(function() {
+          var oneDay      = 24*60*60*1000;
+          var firstDate   = new Date($("#startDate2").val());
+          var secondDate  = new Date($("#endDate2").val());
+          var diffDays    = Math.round(Math.round((secondDate.getTime() - firstDate.getTime()) / (oneDay)));
+          var getDay      = firstDate.getDay();
+
+          var bedahari    = diffDays;
+          $('#bedahari').html('<b>'+ bedahari + ' hari </b>');
+
+          // if(getDay ===)
+        })
+
+        $('#lokasi_sewa').change(function() {
+          var lokasi = $(this).val();
+            if(lokasi === 'Jakarta Pusat'){
+              alert('oke');
+            }
+        });
+
+        $('#cari').click(function() {
+          var kategoriSewa = $('#kategori_sewa').val();
+          var lokasiSewa   = $('#lokasi_sewa').val();
+          var tgl_ambil    = $('#startDate2').val();
+          var tgl_kembali  = $('#endDate2').val();
+
+          if($.trim(kategoriSewa) !== 0 & $.trim(lokasiSewa) !== 0 && $.trim(tgl_ambil) !== '' && $.trim(tgl_kembali) !== '' )
+          {
+              $.ajax({
+                url: "<?= base_url('Home/carimobil') ?>",
+                method: "GET",
+                data: {kategori_sewa: kategoriSewa, lokasi_sewa: lokasiSewa, tgl_ambil: tgl_ambil, tgl_kembali: tgl_kembali},
+                cache: false,
+                beforeSend: function(){
+                  $('#cari').val('loading ..');
+                },
+                success: function(data){
+                  if(data){
+                      window.location = "<?= base_url('Home/carimobil?kategori_sewa=') ?>"+kategoriSewa+"&&lokasi_sewa="+lokasiSewa+"&&tgl_ambil="+tgl_ambil+"&&tgl_kembali="+tgl_kembali;
+
+                  }else{
+                    alert('not found');
+                  }
+
+
+                }
+              });
+
+
+          }
+          else {
+            return false;
+          }
+
+
+        });
+
+
+
+
+
+
+
+      });
+    </script>
